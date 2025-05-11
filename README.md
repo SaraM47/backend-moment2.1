@@ -54,8 +54,10 @@ I tabellen nedan visas en översikt över de metoder och endpoints som API:et an
   "description": "Handledde studenter i programmering"
 }
 ```
-Vid fel returnerar API:et ett JSON-objekt med felmeddelande:
 
+Vid fel returnerar API:et ett JSON-objekt med felmeddelande:
+```json
 {
   "error": "Fel vid hämtning av data"
 }
+```
