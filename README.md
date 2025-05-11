@@ -53,7 +53,7 @@ I tabellen nedan visas en översikt över de metoder och endpoints som API:et an
   "enddate": "2022-06-30",
   "description": "Handledde studenter i programmering"
 }
-
+```
 Vid fel returnerar API:et ett JSON-objekt med felmeddelande:
 
 {
