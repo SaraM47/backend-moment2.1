@@ -48,6 +48,21 @@ app.get('/api/workexperience', async (req, res) => {
   }
 });
 
+// GET – Fetch a specific work experience by ID
+app.get('/api/workexperience/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
+      const result = await db.query('SELECT * FROM workexperience WHERE id = $1', [id]);
+      if (result.rowCount === 0) {
+        res.status(404).json({ error: 'No entry found with that ID' });
+      } else {
+        res.json(result.rows[0]);
+      }
+    } catch (err) {
+      res.status(500).json({ error: 'Error fetching entry by ID' });
+    }
+  });  
+
 // POST – Add new work experience
 app.post('/api/workexperience', async (req, res) => {
   const { companyname, jobtitle, location, startdate, enddate, description } = req.body;
